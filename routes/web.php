@@ -15,13 +15,17 @@ Route::get('/', function () {
     return view('frontend.home.main');
 });
 
+Route::get('/admin/dashboard', function () {
+    return view('backend.backend_master');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
 // Admin Panel Route
-Route::GET('admin/home','AdminController@index')->name('admin-home');
+Route::GET('admin/home','AdminController@index')->name('admin.home');
 Route::GET('admin/editor','EditorController@index');
 Route::GET('admin/test','EditorController@test');
 Route::GET('admin','Admin\LoginController@showLoginForm')->name('admin.login');
