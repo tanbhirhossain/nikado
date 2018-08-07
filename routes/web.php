@@ -12,12 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.home.main');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 // Admin Panel Route
 Route::GET('admin/home','AdminController@index')->name('admin-home');
