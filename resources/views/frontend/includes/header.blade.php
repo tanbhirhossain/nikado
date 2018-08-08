@@ -69,9 +69,20 @@
                                     </div>
                                     <!-- login-register -->
                                     <ul class="login-register pull-left">
-                                        <li><a href="login.html">SIGN IN</a></li>
+                                      @if(!Auth::check())
+                                        <li><a href="{{route('login')}}">SIGN IN</a></li>
                                         <li>Or</li>
-                                        <li><a href="login.html">REGISTER</a></li>
+                                        <li><a href="{{route('login')}}">REGISTER</a></li>
+                                      @else
+
+                                      <div class="currency-menu pull-left">
+                                          <select class="nice-select-menu">
+                                              <option data-display="MY ACCOUNT"</option>
+                                              <option value="1">LOGOUT</option>
+
+                                          </select>
+                                      </div>
+                                      @endif
                                     </ul>
                                 </div>
                             </div>

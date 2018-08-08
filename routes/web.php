@@ -24,10 +24,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-// Admin Panel Route
+//===================================================== Admin Panel Route
+//Admin Auth==============
 Route::GET('admin/home','AdminController@index')->name('admin.home');
-Route::GET('admin/editor','EditorController@index');
-Route::GET('admin/test','EditorController@test');
+// Route::GET('admin/editor','EditorController@index');
+// Route::GET('admin/test','EditorController@test');
 Route::GET('admin','Admin\LoginController@showLoginForm')->name('admin.login');
 Route::POST('admin','Admin\LoginController@login');
 
@@ -35,4 +36,9 @@ Route::POST('admin-password/email','Admin\ForgotPasswordController@sendResetLink
 Route::GET('admin-password/reset','Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
 Route::POST('admin-password/reset','Admin\ResetPasswordController@reset');
 Route::GET('admin-password/reset/{token}','Admin\ResetPasswordController@showResetForm')->name('admin.password.reset');
+//End Admin Auth=========
+
+Route::resource('category', 'CategoryController');
+Route::resource('sub_category', 'SubcategoryController');
+Route::resource('brand', 'BrandController');
 //End Admin Panel Route

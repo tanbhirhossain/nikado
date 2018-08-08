@@ -1,4 +1,5 @@
 @extends('frontend.front_master')
+@section('page-title', 'Home | IT Trade Bd')
 @section('page-content')
 <!-- SLIDER AREA START -->
 <div class="slider-area">

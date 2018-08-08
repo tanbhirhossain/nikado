@@ -1,4 +1,5 @@
 @extends('backend.backend_master')
+@section('page-title', 'Admin | Dashboard')
 @section('page-content')
 <div class="breadcrumbs">
     <div class="col-sm-4">
